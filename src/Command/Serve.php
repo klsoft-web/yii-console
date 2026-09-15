@@ -152,7 +152,7 @@ final class Serve extends Command
 
         $isLinux = DIRECTORY_SEPARATOR !== '\\';
 
-        if ($isLinux) {
+        if ($isLinux && $workers > 1) {
             $command[] = 'PHP_CLI_SERVER_WORKERS=' . $workers;
         }
 
